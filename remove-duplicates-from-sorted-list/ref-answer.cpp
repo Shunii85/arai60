@@ -1,3 +1,5 @@
+// 最初に解いたときに参考にしたプログラム
+// ただ写生しただけなので、step1, 2, 3のファイルは書き直した
 struct ListNode {
   int val;
   ListNode* next;
@@ -9,9 +11,7 @@ struct ListNode {
 class Solution {
  public:
   ListNode* deleteDuplicates(ListNode* head) {
-    if (!head) {
-      return nullptr;
-    }
+    if (!head) return nullptr;
 
     ListNode* prev = head;
     ListNode* node = head;
@@ -23,7 +23,6 @@ class Solution {
       }
       prev = prev->next;
     }
-
     return head;
   }
 };

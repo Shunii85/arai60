@@ -9,17 +9,18 @@ struct ListNode {
 class Solution {
  public:
   ListNode* deleteDuplicates(ListNode* head) {
-    if (!head) return nullptr;
-
-    ListNode* prev = head;
+    // 今注目したいノードだから、current, currで問題ないと思う
     ListNode* curr = head;
+
     while (curr) {
-      if (prev->val == curr->val) {
-        curr = curr->next;
-        prev->next = curr;
-        continue;
+      ListNode* next = curr->next;
+      while (next != nullptr && curr->val == next->val) {
+        next = next->next;
       }
-      prev = prev->next;
+      // ここで繋ぎなおし
+      curr->next = next;
+      // 新しいvalを持つノードに移動。これを次に注目するノードとする
+      curr = curr->next;
     }
 
     return head;

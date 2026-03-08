@@ -9,18 +9,14 @@ struct ListNode {
 class Solution {
  public:
   ListNode* deleteDuplicates(ListNode* head) {
-    if (!head) return nullptr;
-
-    ListNode* prev = head;
-    // 結局nodeのがわかりやすいということにした。
-    ListNode* node = head;
-    while (node) {
-      if (prev->val == node->val) {
-        node = node->next;
-        prev->next = node;
-        continue;
+    ListNode* curr = head;
+    while (curr) {
+      ListNode* next = curr->next;
+      while (next != nullptr && curr->val == next->val) {
+        next = next->next;
       }
-      prev = prev->next;
+      curr->next = next;
+      curr = curr->next;
     }
     return head;
   }
