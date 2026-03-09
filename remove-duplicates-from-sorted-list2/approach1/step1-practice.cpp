@@ -6,6 +6,7 @@ struct ListNode {
   ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
 
+// [previous] -> [current]
 class Solution {
  public:
   // this method doesn't free the nodes unlinked by it;
@@ -15,20 +16,24 @@ class Solution {
     ListNode* current = head;
     bool is_deleting = false;
     int deleting_number = 0;
+
     while (current) {
       if (is_deleting && deleting_number == current->val) {
         previous->next = current->next;
-      } else if (!current->next || current->val != current->next->val) {
-        is_deleting = false;
-        previous = current;
-      } else {
-        is_deleting = true;
-        deleting_number = current->val;
-        previous->next = current->next;
+        current = current->next;
+        continue;
       }
+      is_deleting = false;
+      if (!current->next || current->val != current->next->val) {
+        previous = current;
+        current = current->next;
+        continue;
+      }
+      is_deleting = true;
+      deleting_number = current->val;
+      previous->next = current->next;
       current = current->next;
     }
-
     return dummy->next;
   }
 };

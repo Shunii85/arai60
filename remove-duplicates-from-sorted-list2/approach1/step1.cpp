@@ -1,3 +1,4 @@
+// ACしないプログラム
 struct ListNode {
   int val;
   ListNode* next;
@@ -21,6 +22,7 @@ class Solution {
       while (neighbor_node1) {
         neighbor_node2 = neighbor_node1->next;
         if (neighbor_node2 && neighbor_node1->val == neighbor_node2->val) {
+          // 手作業でした操作を書いたが、謎に２つ先のノードに更新している。
           neighbor_node1 = neighbor_node1->next->next;
           neighbor_node2 = neighbor_node1->next;
         } else {
