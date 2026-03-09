@@ -1,3 +1,6 @@
+# 参考にしたdiscord上のodaさんのコード
+# 2行だけ、コメントアウトしていると思うが、その行は必要ない。
+
 dummy = ListNode()
 dymmy.next = head
 previous = dummy  # 本線のお尻
@@ -7,7 +10,7 @@ while current:
   # 昨日の続きで外す。
   if is_deleting and deleting_number == current.val:
     previous.next = current.next
-    previous = current
+    # previous = current 
     current = current.next
     continue  # 今日の仕事終わり。引き継ぎ内容も変更しなくて完璧。
   # ホワイトボード消す
@@ -27,5 +30,5 @@ while current:
   deleting_number = current.val
   # 1台外す。
   previous.next = current.next
-  previous = current
+  # previous = current
   current = current.next
