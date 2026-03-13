@@ -11,6 +11,7 @@ add自体の計算量は、標準ライブラリsortを使ったので、O(NlogN
 なんでこの方のstep1の通っているんだろう？同じ解き方では？
 https://github.com/fuga-98/arai60/blob/ff640247249d04747823950128d4255b03a12b57/703KthLargestElementinaStream.md
 
+でも提出してみたら1秒近く要している。
 
 ---
 
