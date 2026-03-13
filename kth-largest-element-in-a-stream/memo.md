@@ -8,6 +8,10 @@ add自体の計算量は、標準ライブラリsortを使ったので、O(NlogN
 10^8になってくる。
 やっぱりTLEした。
 
+なんでこの方のstep1の通っているんだろう？同じ解き方では？
+https://github.com/fuga-98/arai60/blob/ff640247249d04747823950128d4255b03a12b57/703KthLargestElementinaStream.md
+
+
 ---
 
 制約の一部
