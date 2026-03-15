@@ -108,3 +108,20 @@ c++の言語機能で知らないものがあった。
  - https://morinokabu.com/2025/09/01/cpp-add-elements-to-container-emplace-back-insert/
  - 一時オブジェクトを作らないとかなんとか
 
+# 他の人のコードを読む
+
+## 1人目
+
+PR: https://github.com/tom4649/Coding/pull/9
+
+### sol1.py
+
+- headとtailという変数名は読み取りにくいなと思った。
+  - 自分なら、`counting_number`と`checking_element`とか
+ 
+ - head = tailという視点(ポインタのような)の動きではなくて、ここは`counting_number = checking_element`としたい。
+ - tail - headの距離でカウントするのは、全然テクニック的でないとは思うけど、一瞬わからなかった。counter変数を使って数えてもいいかも知れないと思った。
+   - counterを最初は1にしておいて(必ず要素は1つはあるから)… 
+ - reverse = Trueで良いのでは？マイナスを使わず
+
+  
