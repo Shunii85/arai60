@@ -18,7 +18,7 @@ class Solution {
       smallest_index_pairs.push({nums1_i, 0});
     }
     int count = 0;
-    while (count < k) {
+    while (count < k && !smallest_index_pairs.empty()) {
       auto [nums1_i, nums2_i] = smallest_index_pairs.top();
       smallest_index_pairs.pop();
       k_smallests.push_back({nums1[nums1_i], nums2[nums2_i]});
