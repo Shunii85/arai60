@@ -114,3 +114,12 @@ auto& [i, j] = kth_idx_pair;
 
 あと、i, j, i+1, j+1を名前付けしたかったけど、長ったらしくてやめた。
 わかりやすい変数名つけれたらなと思う。
+
+# step4
+
+先に一行(もしくは一列)追加してから、上方向(自分の中で増える方向)に追加していく方法を実装した。
+
+こちらのほうがvisitedも必要ないし、わかりやすかった。理解度を上げるためにスライドを自分で作ってみた。
+
+https://docs.google.com/presentation/d/1MFDgwkFnZZaB_6b0P5HiHpvOS_WdOrfpZrQzrFaGOc0/edit?usp=sharing
+
