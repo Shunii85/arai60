@@ -4,6 +4,8 @@
 
 マニュアル: https://docs.google.com/document/d/1bjbOSs-Ac0G_cjVzJ2Qd8URoU_0BNirZ8utS3CUAeLE/edit?tab=t.0#heading=h.y1cq1o8g4nbl
 
+コメント集: https://docs.google.com/document/d/11HV35ADPo9QxJOpJQ24FcZvtvioli770WWdZZDaLOfg/edit?tab=t.0#heading=h.gp4hkfr3qfqc
+
 ## 基本的な練習方法
 
 - 新井さんの問題順番にやっていきます。一日一問で最初はいいでしょう。
