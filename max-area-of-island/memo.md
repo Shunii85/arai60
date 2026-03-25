@@ -41,3 +41,11 @@ calculate、やcountという単語を使いたいと思った。
 1. 7分40秒
 2. 6分15秒
 3. 6分13秒
+
+# 別解
+
+前回のPR(Number of Island)の別解(stack(DFS)とqueue(BFS))にまずは取り組んだ。
+
+それに数え上げを足せばそれで実装できるのでOKとする。また時間があれば書く。
+
+前回のPR: https://github.com/Shunii85/arai60/pull/17
