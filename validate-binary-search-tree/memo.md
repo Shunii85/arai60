@@ -190,6 +190,12 @@ class Solution {
 
 ```
 
+## コメント集
+
+- inorderでソートしてする方法もあるらしい
+  - https://github.com/YukiMichishita/LeetCode/pull/8/changes#diff-4715b26790b92230b162cee20ac77591864a09b081158d7e9d0def2dc4ce5dc7R40-R100
+  - 後で実装してみよう
+
 # step3
 
 1. 2分52秒
