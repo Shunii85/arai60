@@ -19,7 +19,7 @@ class Solution {
     std::deque<int> preorder_store(preorder.begin(), preorder.end());
     std::unordered_map<int, int> inorder_value_to_index;
     inorder_value_to_index.reserve(inorder.size());
-    for (int index = 0; index < inorder.size(); ++index) {
+    for (size_t index = 0; index < inorder.size(); ++index) {
       inorder_value_to_index[inorder[index]] = index;
     }
     return build(preorder_store, inorder_value_to_index, 0, inorder.size() - 1);

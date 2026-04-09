@@ -16,7 +16,7 @@
 
 - ちょっとどうすればいいのか全然わからずに答えを見る。
   - 何となく理解はした。
-  - preorderは、順に取り出していけば、rootから始まって、left => rightの優先順位で深さ優先探索を行ったような順にでてくる。
+  - preorderは、順に取り出していけば、rootから始まって、left => rightの優先順位で深さ優先探索を行うような順にでてくる。
     - ひたすらなるべく左側のノードを取り出して、なければその右をとる。
   - inorderは、あるindexを選んだ時、[左, index, 右]というように並んでいる。
     - でも左にある値がすべて自分の左側の部分木であるとは限らない。ただし、うまくノードを消費できればその限りではない。
@@ -200,7 +200,40 @@ class Solution {
   - 例外は投げられないと思うけれど、なんだか嫌だった。
   - assertを書いておく？ assert(value_to_index.contains(value));
 
+## コメント集
+
+- https://discord.com/channels/1084280443945353267/1233603535862628432/1289056088334925888
+  - これができていないんだと思う。
+    - 自分でもやってみた。
+
+- > あー、あと、遅いコードでもいいから動くものを書いてみませんか。一回書けると速くしやすいです。
+  - んーそうか
+
+- https://discord.com/channels/1084280443945353267/1247673286503039020/1300957719074967603
+  - preorderの先頭から構築する方法。まぁ、なんとなく理解はできた。
+    - grand parentの位置がわかることで、rightかどうかわかる。
+
+- https://discord.com/channels/1084280443945353267/1247673286503039020/1300957861614063616
+  - inorderの先頭からでできるの？
+
+
 # step2
 
-step1-2.cppを採用。
+step1-2.cppを採用する。
 
+- unordered_mapのサイズは元より決まっているので、reserveで予め確保しておく。
+  - reserveについて。
+    - https://cpprefjp.github.io/reference/unordered_map/unordered_map/reserve.html
+    - max_load_factorに基づいて計算される。デフォルトでは1.0。load_factorはバケットあたりの要素数(どれだけ衝突しているか)の平均。
+    - reserve(n)は、ceil(n / max_load_factor)を引数にrehash()するのと同じ。
+      - 例えば、最大2[個/バケット]格納が許されていたら、nに5を渡すとして、2のバケットを用意するようにリハッシュする。
+      - つまり、バケットごとに入る要素で割ればn個の要素が全体で収まるようになるということ。
+
+- assertを使って例外が投げられる前に確認。operator[]はconstなunordered_mapに対して呼べない。constメンバ関数がない。
+  - https://cpprefjp.github.io/reference/unordered_map/unordered_map/op_at.html
+
+# step3
+
+1. 7分04秒
+2. 6分40秒
+3. 
