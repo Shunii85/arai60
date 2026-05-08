@@ -301,3 +301,40 @@ class Solution {
 
 2. 3分18秒
 3. 3分04秒
+
+# レビュー後
+
+- 部分文字列をとらなくてもいい方法がないか、ということで
+- string_viewがあった。
+
+```cpp
+#include <string>
+#include <vector>
+class Solution {
+ public:
+  bool wordBreak(const std::string& s,
+                 const std::vector<std::string>& word_dict) {
+    std::vector<int> reachable(s.length(), false);
+    std::string_view target_str_view(s);
+
+    for (int i = 0; i < s.length(); ++i) {
+      for (const auto& word : word_dict) {
+        if (reachable[i]) {
+          continue;
+        }
+        int start = i - word.length() + 1;
+        if (start < 0 || s[start] != word[0]) {
+          continue;
+        }
+        if (start == 0 || reachable[start - 1]) {
+          if (target_str_view.substr(start, word.length()) == word) {
+            reachable[i] = true;
+          }
+        }
+      }
+    }
+
+    return reachable[s.length() - 1];
+  }
+};
+```
